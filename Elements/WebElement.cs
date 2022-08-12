@@ -15,7 +15,7 @@ namespace Elements
 
         public IWebElement _webElement
         {
-            get => (IWebElement)FindElementInSeconds();
+            get => FindElementInSeconds();
 
             set => _webElement = value;
         }

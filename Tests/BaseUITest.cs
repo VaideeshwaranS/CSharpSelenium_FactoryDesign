@@ -5,16 +5,17 @@ using Pages;
 namespace Tests
 {
     [TestClass]
-    public class BaseUITest 
+    public class BaseUITest
     {
-        public DriverInstance instance;
-        protected LoginPage login;
+        protected DriverFactory instance;
+        protected SauceDemoApplication app;
 
         [TestInitialize]
         public void TestInit()
         {
-            instance = new DriverInstance("chrome");
-            login = new LoginPage(instance);
+            instance = new DriverFactory();
+            instance.driverService = new DriverService("chrome");
+            app = new SauceDemoApplication(instance);
         }
 
         [TestCleanup]
