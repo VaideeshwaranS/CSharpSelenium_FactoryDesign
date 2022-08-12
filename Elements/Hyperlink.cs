@@ -2,15 +2,15 @@
 
 namespace Elements
 {
-    public class Button : WebElement
+    public class Hyperlink : WebElement
     {
-        public Button(WebDriver driver, By by) : base(driver, by)
+        public Hyperlink(WebDriver driver, By by) : base(driver, by)
         {
         }
-
         public void Click()
         {
             _webElement.Click();
         }
+
     }
 }

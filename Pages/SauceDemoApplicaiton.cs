@@ -1,5 +1,6 @@
 ﻿using DriverManager;
 using Pages;
+using System;
 
 namespace Pages
 {
@@ -16,5 +17,10 @@ namespace Pages
             instance.getDriver().Navigate().GoToUrl("https://www.saucedemo.com/");
         }
         public LoginPage _loginpage => new LoginPage(instance);
+        public ProductsPage _productsPage => new ProductsPage(instance);
+        public void CloseApp()
+        {
+            instance.CloseDriver();
+        }
     }
 }

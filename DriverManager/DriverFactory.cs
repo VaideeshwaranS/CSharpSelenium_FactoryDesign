@@ -36,7 +36,7 @@ namespace DriverManager
             return driver;
         }
 
-        public void CloseDriver() => driver.Close();
+        public void CloseDriver() => driver.Quit();
 
         public void NavigateBack() => driver.Navigate().Back();
 

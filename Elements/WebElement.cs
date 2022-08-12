@@ -22,10 +22,5 @@ namespace Elements
 
         bool Enabled => _webElement.Enabled;
 
-
-        public void Click()
-        {
-            _webElement.Click();
-        }
     }
 }

@@ -21,7 +21,7 @@ namespace Tests
         [TestCleanup]
         public void TestClean()
         {
-            instance.CloseDriver();
+            app.CloseApp();
         }
     }
 }

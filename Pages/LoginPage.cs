@@ -27,5 +27,12 @@ namespace Pages
                 Console.WriteLine("{0} = {1}", metric.Name, metric.Value);
             }
         }
+
+        public void LoginToApp()
+        {
+            Username.SendKeysWithClear("standard_user");
+            Password.SendKeysWithClear("secret_sauce");
+            Loginbutton.Click();
+        }
     }
 }
