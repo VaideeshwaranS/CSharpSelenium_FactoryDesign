@@ -4,6 +4,7 @@ using OpenQA.Selenium.DevTools;
 using OpenQA.Selenium.DevTools.V103.Performance;
 using OpenQA.Selenium.Firefox;
 using System;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using EnableCommandSettings = OpenQA.Selenium.DevTools.V103.Performance.EnableCommandSettings;
 
@@ -53,6 +54,10 @@ namespace DriverManager
         public override void CloseDriver()
         {
             driver.Close();
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                System.Diagnostics.Process.Start("CMD.exe", "taskkill /IM chromedriver.exe /F");
+            }
         }
 
         public void LaunchApp()

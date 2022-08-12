@@ -20,8 +20,13 @@ namespace Elements
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(maxSec));
             wait.PollingInterval = TimeSpan.FromMilliseconds(500);
             wait.Timeout = TimeSpan.FromSeconds(maxSec);
-           
-            return driver.FindElement(by);
+
+            return wait.Until(WaitTillElementExists());
+        }
+
+        private Func<IWebDriver, IWebElement> WaitTillElementExists()
+        {
+            return SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(by);
         }
     }
 }
