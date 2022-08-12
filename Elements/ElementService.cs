@@ -7,16 +7,16 @@ namespace Elements
 {
     public class ElementService
     {
-        DriverInstance instance;
+        DriverFactory instance;
              
-        public ElementService(DriverInstance instance)
+        public ElementService(DriverFactory instance)
         {
             this.instance = instance;
            
         }
         public T CreateElement<T>(By by)
         {
-           return (T)Activator.CreateInstance(typeof(T), instance.driver, by);
+           return (T)Activator.CreateInstance(typeof(T), instance.getDriver(), by);
         }
 
         public T CreateElementByXpath<T>(string id)

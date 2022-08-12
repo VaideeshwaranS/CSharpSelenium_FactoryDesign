@@ -4,16 +4,22 @@ using Elements;
 
 namespace Pages
 {
-    public abstract class Page
+    public class Page
     {
 
-        public Page(DriverInstance instance)
+        public Page(DriverFactory instance)
         {
             this.instance = instance;
-            Element = new ElementService(instance);
+            Element = GetElementService(instance);
+        }
+
+        private static ElementService GetElementService(DriverFactory instance)
+        {
+            return new ElementService(instance);
         }
 
         protected ElementService Element;
-       protected DriverInstance instance;
+        protected DriverFactory instance;
+
     }
 }

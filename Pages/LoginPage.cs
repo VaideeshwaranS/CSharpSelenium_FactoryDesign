@@ -1,13 +1,13 @@
 ﻿using DriverManager;
 using Elements;
-using OpenQA.Selenium.DevTools.V103.Performance;
+using OpenQA.Selenium.DevTools.V104.Performance;
 using System;
 
 namespace Pages
 {
     public class LoginPage : Page
     {
-        public LoginPage(DriverInstance instance) : base(instance)
+        public LoginPage(DriverFactory instance) : base(instance)
         {
         }
 

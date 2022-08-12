@@ -5,10 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DriverManager\" />
     <Folder Include="Elements\" />
-    <Folder Include="Tests\" />
-    <Folder Include="Pages\" />
   </ItemGroup>
 
   <ItemGroup>

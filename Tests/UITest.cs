@@ -8,8 +8,8 @@ namespace Tests
         [TestMethod]
         public void FirstTest()
         {
-            instance.LaunchApp();
-            login.PerformanceofLoginToSauceDemo();
+            app.launchApp();
+            app._loginpage.PerformanceofLoginToSauceDemo();
         }
     }
 }
