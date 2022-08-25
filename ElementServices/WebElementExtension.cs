@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using CustomFrameworkPOC;
+using CustomFrameworkPOC.ReportService;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 
@@ -8,6 +10,7 @@ namespace Elements
     {
         private WebDriver driver;
         private By by;
+        
 
         protected WebElementExtension(WebDriver driver, By by)
         {

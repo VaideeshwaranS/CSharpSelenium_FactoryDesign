@@ -3,23 +3,22 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using System;
 
-namespace DriverManager
+namespace CustomFrameworkPOC.DriverManager
 {
     public interface IDriverService
     {
         IWebDriver GetWebDriver();
+        void CloseDriver();
+        void NavigateBack();
+        void Refresh();
     }
     public class DriverService : IDriverService
     {
         private IWebDriver driver;
-        private string browser;
+       
         public DriverService(string browser)
         {
-            this.browser = browser;
-        }
-        public IWebDriver GetWebDriver()
-        {
-            driver = browser switch
+           driver = browser switch
             {
                 "chrome" => new ChromeDriver(),
                 "firefox" => new FirefoxDriver(),
@@ -27,7 +26,17 @@ namespace DriverManager
             };
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+        }
+        public IWebDriver GetWebDriver()
+        {
             return driver;
         }
+               
+        public  void CloseDriver() => driver.Close();
+
+        public  void NavigateBack() => driver.Navigate().Back();
+
+        public  void Refresh() => driver.Navigate().Refresh();
+
     }
 }

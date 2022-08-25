@@ -1,5 +1,4 @@
-﻿using DriverManager;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System;
 
 
@@ -7,16 +6,16 @@ namespace Elements
 {
     public class ElementService
     {
-        DriverFactory instance;
+        private IWebDriver driver;
              
-        public ElementService(DriverFactory instance)
+        public ElementService(IWebDriver driver)
         {
-            this.instance = instance;
+            this.driver = driver;
            
         }
         public T CreateElement<T>(By by)
         {
-           return (T)Activator.CreateInstance(typeof(T), instance.getDriver(), by);
+           return (T)Activator.CreateInstance(typeof(T), driver, by);
         }
 
         public T CreateElementByXpath<T>(string id)
