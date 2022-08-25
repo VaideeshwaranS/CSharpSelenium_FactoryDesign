@@ -18,5 +18,14 @@ namespace Elements
             return _webElement.Text.Trim();
         }
 
+        public bool isDisplayed(int maxSec=60)
+        {
+            return WaitForVisibilityofElement(maxSec);
+        }
+
+        public string GetValueofAttribute(string attrib)
+        {
+            return _webElement.GetAttribute(attrib).ToString();
+        }
     }
 }

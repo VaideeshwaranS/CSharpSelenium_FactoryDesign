@@ -1,6 +1,11 @@
 ﻿using DriverManager;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pages;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Reflection;
 
 namespace Tests
 {
@@ -16,6 +21,7 @@ namespace Tests
             instance = new DriverFactory();
             instance.driverService = new DriverService("chrome");
             app = new SauceDemoApplication(instance);
+            app.launchApp();
         }
 
         [TestCleanup]

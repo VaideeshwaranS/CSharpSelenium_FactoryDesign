@@ -19,9 +19,12 @@ namespace DriverManager
         }
         public IWebDriver GetWebDriver()
         {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.SetLoggingPreference("performance", LogLevel.All);
+
             driver = browser switch
             {
-                "chrome" => new ChromeDriver(),
+                "chrome" => new ChromeDriver(chromeOptions),
                 "firefox" => new FirefoxDriver(),
                 _ => throw new Exception("Invalid Browser name")
             };
