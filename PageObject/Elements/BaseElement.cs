@@ -10,7 +10,7 @@ namespace CustomFrameworkPOC.PageObject.Elements
         public BaseElement()
         {
             driver = ServiceRegister.Browser.GetWebDriver();
-            Element = new ElementService(driver);
+            Element = ServiceRegister.Element;
         }
     }
 }

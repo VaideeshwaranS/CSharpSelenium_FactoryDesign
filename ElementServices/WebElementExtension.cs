@@ -10,8 +10,8 @@ namespace Elements
     {
         private WebDriver driver;
         private By by;
-        
 
+        private WebDriverWait wait;
         protected WebElementExtension(WebDriver driver, By by)
         {
             this.driver = driver;
@@ -20,7 +20,7 @@ namespace Elements
 
         public IWebElement FindElementInSeconds(int maxSec = 60)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(maxSec));
+            wait = ServiceRegister.BrowserWait;
             wait.PollingInterval = TimeSpan.FromMilliseconds(500);
             wait.Timeout = TimeSpan.FromSeconds(maxSec);
 

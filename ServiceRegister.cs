@@ -1,6 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using CustomFrameworkPOC.DriverManager;
 using CustomFrameworkPOC.ReportService;
+using Elements;
 using OpenQA.Selenium.Support.UI;
 using System;
 
@@ -16,6 +17,7 @@ namespace CustomFrameworkPOC
         private static WebDriverWait browserWait;
         private static IDriverService browser;
         private static IReportService reportService;
+
         public static IDriverService Browser
         {
             get
@@ -63,6 +65,7 @@ namespace CustomFrameworkPOC
                 reportService = value;
             }
         }
-      
+
+        public static ElementService Element => new ElementService(browser.GetWebDriver());
     }
 }
