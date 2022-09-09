@@ -1,5 +1,5 @@
-﻿using CustomFrameworkPOC;
-using CustomFrameworkPOC.ReportService;
+﻿using CoreServices;
+using CoreServices.ReportService;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;

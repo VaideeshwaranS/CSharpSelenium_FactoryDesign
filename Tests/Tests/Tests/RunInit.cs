@@ -1,5 +1,5 @@
-﻿using CustomFrameworkPOC;
-using CustomFrameworkPOC.ReportService;
+﻿using CoreServices;
+using CoreServices.ReportService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests

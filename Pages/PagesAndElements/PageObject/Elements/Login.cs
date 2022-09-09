@@ -1,8 +1,6 @@
-﻿using CustomFrameworkPOC.PageObject.Pages;
-using Elements;
-using OpenQA.Selenium;
+﻿using Elements;
 
-namespace CustomFrameworkPOC.PageObject.Elements
+namespace PageObject.Elements
 {
     public class Login : BaseElement
     {

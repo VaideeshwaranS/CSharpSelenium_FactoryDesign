@@ -3,7 +3,7 @@ using AventStack.ExtentReports.Reporter;
 using System;
 using System.IO;
 
-namespace CustomFrameworkPOC.ReportService
+namespace CoreServices.ReportService
 {
     public interface IReportService
     {
@@ -23,9 +23,7 @@ namespace CustomFrameworkPOC.ReportService
             var actualPath = path.Substring(0, path.LastIndexOf("bin"));
             var projectPath = new Uri(actualPath).LocalPath;
             Directory.CreateDirectory(projectPath.ToString() + "Reports");
-            Console.WriteLine(projectPath.ToString());
             var reportPath = projectPath + "Reports\\Index.html";
-            Console.WriteLine(reportPath);
             var htmlReporter = new ExtentHtmlReporter(reportPath);
             _extent = new ExtentReports();
             _extent.AttachReporter(htmlReporter);

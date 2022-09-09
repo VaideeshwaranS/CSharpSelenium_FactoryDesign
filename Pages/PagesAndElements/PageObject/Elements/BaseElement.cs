@@ -1,7 +1,8 @@
-﻿using Elements;
+﻿using CoreServices;
+using Elements;
 using OpenQA.Selenium;
 
-namespace CustomFrameworkPOC.PageObject.Elements
+namespace PageObject.Elements
 {
     public class BaseElement
     {

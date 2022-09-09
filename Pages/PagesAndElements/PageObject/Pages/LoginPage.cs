@@ -1,8 +1,7 @@
 ﻿using AventStack.ExtentReports;
-using CustomFrameworkPOC.PageObject.Elements;
-using CustomFrameworkPOC.ReportService;
+using PageObject.Elements;
 
-namespace CustomFrameworkPOC.PageObject.Pages
+namespace PageObject.Pages
 {
     public class LoginPage : Page<Login>
     {

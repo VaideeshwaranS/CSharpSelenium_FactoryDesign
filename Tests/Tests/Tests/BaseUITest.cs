@@ -1,7 +1,7 @@
 ﻿using AventStack.ExtentReports;
-using CustomFrameworkPOC;
-using CustomFrameworkPOC.DriverManager;
-using CustomFrameworkPOC.ReportService;
+using CoreServices;
+using CoreServices.DriverManager;
+using CoreServices.ReportService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests

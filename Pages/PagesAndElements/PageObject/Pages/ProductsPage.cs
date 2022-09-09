@@ -1,7 +1,7 @@
 ﻿using AventStack.ExtentReports;
-using CustomFrameworkPOC.PageObject.Elements;
+using PageObject.Elements;
 
-namespace CustomFrameworkPOC.PageObject.Pages
+namespace PageObject.Pages
 {
     public class ProductsPage :Page<Products>
     {

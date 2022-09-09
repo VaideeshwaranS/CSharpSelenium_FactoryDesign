@@ -1,11 +1,11 @@
-﻿using AventStack.ExtentReports;
-using CustomFrameworkPOC.DriverManager;
-using CustomFrameworkPOC.ReportService;
+﻿using CoreServices.DriverManager;
+using CoreServices.Performance;
+using CoreServices.ReportService;
 using Elements;
 using OpenQA.Selenium.Support.UI;
 using System;
 
-namespace CustomFrameworkPOC
+namespace CoreServices
 {
     public static class ServiceRegister
     {
@@ -66,6 +66,7 @@ namespace CustomFrameworkPOC
             }
         }
 
+        public static PerformanceMetrics Performance => browser.GetPerformanceMetricsAsync().Result;
         public static ElementService Element => new ElementService(browser.GetWebDriver());
     }
 }

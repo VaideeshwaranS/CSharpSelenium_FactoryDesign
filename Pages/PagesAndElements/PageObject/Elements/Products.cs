@@ -1,6 +1,6 @@
 ﻿using Elements;
 
-namespace CustomFrameworkPOC.PageObject.Elements
+namespace PageObject.Elements
 {
     public class Products : BaseElement
     {
