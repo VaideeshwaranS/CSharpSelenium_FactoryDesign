@@ -33,13 +33,13 @@ namespace PageObject.Pages
         {
             await ServiceRegister.Browser.CreateDevToolsSessionAsync();
         }
-        public void WritePerformanceMetrics()
+        public void WritePerformanceMetrics(string testName)
         {
             PerformanceMetrics perf = ServiceRegister.Performance;
-            Console.WriteLine("DomLoadedTiming" +perf.DomLoaded);
+            Console.WriteLine(testName+"\nTotal Time for Navigation : " + perf.TotalTimeforNavigation + "\n" +
+                 "Total Script Duration :" + perf.TotalScriptDuration + "\n" +
+                  "DOM Loaded Time :" + perf.DomLoaded + "\n" +
+                   "First Meaningful Paint Time: " + perf.FirstMeaningfulPaintDuration);
         }
-
-       
     }
-
 }

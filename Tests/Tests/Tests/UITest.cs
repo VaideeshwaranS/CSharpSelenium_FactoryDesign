@@ -14,14 +14,13 @@ namespace Tests
         {
             LoginPage _login = new LoginPage();
             ProductsPage _product = new ProductsPage();
-            
+           
             _login.launchApp("https://www.saucedemo.com/");
             _login.LoginToApp();
-
             await _product.init_Performance();
             _product.ClickProduct("Sauce Labs Onesie");
             _product.GetProductDesc("Sauce Labs Onesie");
-            _product.WritePerformanceMetrics();
+            _product.WritePerformanceMetrics(TestContext.TestName);
             
             Assert.IsTrue(true);
         }

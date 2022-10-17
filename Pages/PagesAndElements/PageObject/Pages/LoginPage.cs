@@ -22,7 +22,7 @@ namespace PageObject.Pages
         }
         public void LoginToApp()
         {
-            EnterUsername("standard_user");
+            EnterUsername("performance_glitch_user");
             EnterPassword("secret_sauce");
             ClickLogin();
         }

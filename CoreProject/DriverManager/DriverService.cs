@@ -94,10 +94,11 @@ namespace CoreServices.DriverManager
             {
                 dict.Add(metric.Name, metric.Value);
             }
-            perfmetrics.TotalTimeTaken = (dict["Timestamp"] - dict["NavigationStart"]) / 1000;
-            perfmetrics.DomLoaded = (dict["DomContentLoaded"] - dict["NavigationStart"]) / 1000;
-            perfmetrics.TotalScriptDuration = dict["ScriptDuration"];
-            perfmetrics.FirstMeaningfulPaintDuration = dict["FirstMeaningfulPaint"];
+            perfmetrics.TotalTimeforNavigation = Math.Round((dict["Timestamp"] - dict["NavigationStart"]) / 1000,3);
+            perfmetrics.DomLoaded = Math.Round((dict["DomContentLoaded"] - dict["NavigationStart"]) / 1000,3);
+            perfmetrics.TotalScriptDuration = Math.Round(dict["ScriptDuration"], 3);
+            perfmetrics.FirstMeaningfulPaintDuration = (dict["FirstMeaningfulPaint"] > 0 ) ?
+               Math.Round((dict["FirstMeaningfulPaint"] - dict["NavigationStart"]) / 1000, 3) : dict["FirstMeaningfulPaint"];
 
             return perfmetrics;
         }
