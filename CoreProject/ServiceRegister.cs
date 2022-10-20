@@ -67,6 +67,8 @@ namespace CoreServices
         }
 
         public static PerformanceMetrics Performance => browser.GetPerformanceMetricsAsync().Result;
+
+        public static PerformanceMetrics PerformanceTiming => browser.GetPerformanceTiming();
         public static ElementService Element => new ElementService(browser.GetWebDriver());
     }
 }

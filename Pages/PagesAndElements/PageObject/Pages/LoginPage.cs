@@ -5,6 +5,7 @@ namespace PageObject.Pages
 {
     public class LoginPage : Page<Login>
     {
+      
         public void EnterUsername(string username)
         {
             report.LogReport(Status.Info, $"Enter the username {username} ");
@@ -15,16 +16,27 @@ namespace PageObject.Pages
             report.LogReport(Status.Info, $"Enter the password {password} ");
             page.Password.SendKeysWithClear(password);
         }
+        public void PressContinue()
+        {
+            report.LogReport(Status.Info, $"Clicked on Login Button ");
+            page.Continuebutton.Click();
+        }
         public void ClickLogin()
         {
             report.LogReport(Status.Info, $"Clicked on Login Button ");
-            page.Loginbutton.Click();
+            page.Next.Click();
+            
+            WaitForLoadingIcon();
+            
+
         }
-        public void LoginToApp()
+        public UsersPage LoginToApp()
         {
-            EnterUsername("performance_glitch_user");
-            EnterPassword("secret_sauce");
+            EnterUsername("adminuat");
+            PressContinue();
+            EnterPassword("Test@1234567");
             ClickLogin();
+            return new UsersPage();
         }
 
     }

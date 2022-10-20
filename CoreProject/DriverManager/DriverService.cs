@@ -21,6 +21,8 @@ namespace CoreServices.DriverManager
         Task CreateDevToolsSessionAsync();
         Task<PerformanceMetrics>  GetPerformanceMetricsAsync();
         void CloseDevToolsSession();
+        void ClearResourceTimings();
+        PerformanceMetrics GetPerformanceTiming();
     }
     public class DriverService : IDriverService
     {
@@ -79,10 +81,17 @@ namespace CoreServices.DriverManager
             }
             fetch.RequestPaused += RequestIntercepted;
             */
+            
+
             await session.SendCommand(new EnableCommandSettings());
             
         }
 
+        public void ClearResourceTimings()
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("window.performance.clearResourceTimings()");
+        }
         public async Task<PerformanceMetrics> GetPerformanceMetricsAsync()
         {
             var metricsResponse = await session.SendCommand<GetMetricsCommandSettings, GetMetricsCommandResponse>(
@@ -94,11 +103,11 @@ namespace CoreServices.DriverManager
             {
                 dict.Add(metric.Name, metric.Value);
             }
-            perfmetrics.TotalTimeforNavigation = Math.Round((dict["Timestamp"] - dict["NavigationStart"]) / 1000,3);
-            perfmetrics.DomLoaded = Math.Round((dict["DomContentLoaded"] - dict["NavigationStart"]) / 1000,3);
-            perfmetrics.TotalScriptDuration = Math.Round(dict["ScriptDuration"], 3);
+            perfmetrics.TotalTimeforNavigation = dict["Timestamp"] - dict["NavigationStart"];
+            perfmetrics.DomLoaded = dict["DomContentLoaded"] - dict["NavigationStart"];
+            perfmetrics.TotalScriptDuration = dict["ScriptDuration"];
             perfmetrics.FirstMeaningfulPaintDuration = (dict["FirstMeaningfulPaint"] > 0 ) ?
-               Math.Round((dict["FirstMeaningfulPaint"] - dict["NavigationStart"]) / 1000, 3) : dict["FirstMeaningfulPaint"];
+               dict["FirstMeaningfulPaint"] - dict["NavigationStart"] : dict["FirstMeaningfulPaint"];
 
             return perfmetrics;
         }
@@ -106,6 +115,16 @@ namespace CoreServices.DriverManager
         public void CloseDevToolsSession()
         {
             devTools.CloseDevToolsSession();
+        }
+
+        public PerformanceMetrics GetPerformanceTiming()
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            PerformanceMetrics perfmetrics = new PerformanceMetrics();
+            perfmetrics.DomLoaded = Convert.ToInt32(js.ExecuteScript("return window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart;"));
+            perfmetrics.TotalResponseTime = Convert.ToInt32(js.ExecuteScript("return window.performance.timing.responseEnd-window.performance.timing.requestStart;"));
+            perfmetrics.TotalTimeTaken = Convert.ToInt32(js.ExecuteScript("return window.performance.timing.loadEventEnd-window.performance.timing.navigationStart;"));
+            return perfmetrics;
         }
 
     }

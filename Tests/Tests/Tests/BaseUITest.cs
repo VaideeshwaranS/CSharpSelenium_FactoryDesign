@@ -3,6 +3,7 @@ using CoreServices;
 using CoreServices.DriverManager;
 using CoreServices.ReportService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PageObject;
 
 namespace Tests
 {
@@ -41,5 +42,7 @@ namespace Tests
             };
             report.LogReport(logstatus, " Status:" + logstatus);
         }
+
+
     }
 }

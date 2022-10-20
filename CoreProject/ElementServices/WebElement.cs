@@ -22,5 +22,17 @@ namespace Elements
 
         bool Enabled => _webElement.Enabled;
 
+        public bool isDisplayed(bool isExist = true, int waitSecs = 60)
+        {
+            if (!isExist)
+            {
+                WaitForElementToDisappear(waitSecs);
+            }
+            if (isExist && _webElement.Displayed)
+                return true;
+            else
+                return false;
+           
+        }
     }
 }
