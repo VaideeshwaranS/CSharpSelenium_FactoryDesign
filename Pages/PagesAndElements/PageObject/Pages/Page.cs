@@ -49,12 +49,13 @@ namespace PageObject.Pages
         public void GetPerformanceTiming(string testName)
         {
             PerformanceMetrics perf = ServiceRegister.PerformanceTiming;
-            report.LogReport(Status.Info, string.Format("Test:  {0} \n" +
-                                "DOM Loading time is {1} ms\n" +
-                                "Total Response Time is {2} ms\n" +
-                                "Total Time Taken is {3} ms", testName, perf.DomLoaded,perf.TotalResponseTime,perf.TotalTimeTaken ));
+            report.LogReport(Status.Info, string.Format("<h1>Test:  {0} <h1><br>" +
+                                "DOM Loading time is <mark>{1} ms</mark></br>" +
+                                "Total Response Time is <mark>{2} ms</mark></br>" +
+                                "<b>Total Time Taken is <mark>{3} ms</mark></b>", testName, perf.DomLoaded,perf.TotalResponseTime,perf.TotalTimeTaken ));
             DBHelper db = new DBHelper();
             db.WriteDatatoTable(testName, perf);
+            report.LogReport(Status.Info, db.GetMetricsTableForLast5Date(testName));
         }
 
         public void WaitForLoadingIcon()
