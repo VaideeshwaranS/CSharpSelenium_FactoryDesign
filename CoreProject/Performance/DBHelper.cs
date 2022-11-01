@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AventStack.ExtentReports.MarkupUtils;
+using RazorEngine.Compilation.ImpromptuInterface.Optimization;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
@@ -92,6 +94,33 @@ namespace CoreServices.Performance
 
         }
 
+        public IMarkup GetTableMarkupforLast5Runs(string testName)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[2] { new DataColumn("Date", typeof(string)),
+                    new DataColumn("TotalTime", typeof(string)) });
+            string oString = $"SELECT TOP (5) [Date],[TotalTime] FROM TestResponseTime where TestCaseID = (SELECT TestCaseID from TestNameTable where [TestName] = '{testName}') ORDER BY Date desc ";
+            SqlCommand oCmd = new SqlCommand(oString, conn);
+            using (SqlDataReader oReader = oCmd.ExecuteReader())
+            {
+                while (oReader.Read())
+                {
+                    dt.Rows.Add(oReader["Date"].ToString(), oReader["TotalTime"].ToString());
+                }
+            }
+            string[,] data = new string[dt.Rows.Count+1, 2];
+            data[0,0] = "Date";
+            data[0,1] = "Time Taken in (ms)";
+            int i = 1;
+            foreach(DataRow r in dt.Rows)
+            {
+                data[i,0] = r["Date"].ToString();
+                data[i,1] = r["TotalTime"].ToString();
+                i++;
+            }
+            var m = MarkupHelper.CreateTable(data);
+            return m;
+        }
         private string GetTestCaseId(string testName)
         {
             string sql = $"SELECT TestCaseID FROM TestNameTable where [TestName] = '{testName}'";

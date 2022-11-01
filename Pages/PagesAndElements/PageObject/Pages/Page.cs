@@ -3,12 +3,9 @@ using PageObject.Elements;
 using CoreServices.ReportService;
 using OpenQA.Selenium;
 using CoreServices;
-using OpenQA.Selenium.DevTools.V104.Performance;
 using System;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using CoreServices.Performance;
-using PageObject.Pages;
 
 namespace PageObject.Pages
 {
@@ -36,7 +33,11 @@ namespace PageObject.Pages
             await ServiceRegister.Browser.CreateDevToolsSessionAsync();
         }
 
-        public void ClearTiming() => ServiceRegister.Browser.ClearResourceTimings();
+        public void ClearTiming()
+        {
+            ServiceRegister.Browser.ClearResourceTimings();
+            report.LogReport(Status.Info, "Cleared Performance Timing in browser");
+        }
         public void WritePerformanceMetrics(string testName)
         {
             PerformanceMetrics perf = ServiceRegister.Performance;
@@ -49,13 +50,15 @@ namespace PageObject.Pages
         public void GetPerformanceTiming(string testName)
         {
             PerformanceMetrics perf = ServiceRegister.PerformanceTiming;
-            report.LogReport(Status.Info, string.Format("<h1>Test:  {0} <h1><br>" +
-                                "DOM Loading time is <mark>{1} ms</mark></br>" +
-                                "Total Response Time is <mark>{2} ms</mark></br>" +
-                                "<b>Total Time Taken is <mark>{3} ms</mark></b>", testName, perf.DomLoaded,perf.TotalResponseTime,perf.TotalTimeTaken ));
+            report.LogReport(Status.Info, string.Format("<b>Performance Metrics Collected:</b>  {0} <br>" +
+                                "DOM Loading time is <mark>{1}</mark> ms</br>" +
+                                "Total Response Time is <mark>{2}</mark> ms</br>" +
+                                "<b>Total Time Taken is <mark>{3}</mark> ms</b>", testName, perf.DomLoaded,perf.TotalResponseTime,perf.TotalTimeTaken ));
             DBHelper db = new DBHelper();
             db.WriteDatatoTable(testName, perf);
-            report.LogReport(Status.Info, db.GetMetricsTableForLast5Date(testName));
+            var message = "<b> Performance Metrics for last 5 runs: </b><br>"+db.GetTableMarkupforLast5Runs(testName).GetMarkup();
+            report.LogReport(Status.Pass, message );
+            
         }
 
         public void WaitForLoadingIcon()
