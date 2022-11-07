@@ -90,7 +90,7 @@ namespace CoreServices.DriverManager
         public void ClearResourceTimings()
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            js.ExecuteScript("window.performance.clearResourceTimings()");
+            js.ExecuteScript("window.performance.clearResourceTimings();");
         }
         public async Task<PerformanceMetrics> GetPerformanceMetricsAsync()
         {

@@ -6,6 +6,7 @@ using CoreServices;
 using System;
 using System.Threading.Tasks;
 using CoreServices.Performance;
+using System.Reflection;
 
 namespace PageObject.Pages
 {
@@ -63,14 +64,14 @@ namespace PageObject.Pages
 
         public void WaitForLoadingIcon()
         {
-            report.LogReport(Status.Info, $"Waiting for Load icon to complete");
+            report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} to complete");
             page.LoadingIcon.isDisplayed(false);
         }
 
         #region Navigations
         public EquipmentPage NavigateToEquipment()
         {
-            report.LogReport(Status.Info, $"Navigating to Equipments Page");
+            report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} Page");
             page.Equipment.Click();
             
             WaitForLoadingIcon();
@@ -79,7 +80,7 @@ namespace PageObject.Pages
 
         public FacilitiesPage NavigateToFacilities()
         {
-            report.LogReport(Status.Info, $"Navigating to Facilities Page");
+            report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} Page");
             page.Facilities.Click();
             
             WaitForLoadingIcon();

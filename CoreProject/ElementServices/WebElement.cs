@@ -24,14 +24,28 @@ namespace Elements
 
         public bool isDisplayed(bool isExist = true, int waitSecs = 60)
         {
+
             if (!isExist)
             {
-                WaitForElementToDisappear(waitSecs);
+                try
+                {
+                    return WaitForElementToDisappear(waitSecs);
+                }
+                catch
+                {
+                    return false;
+                }
+                
             }
-            if (isExist && _webElement.Displayed)
-                return true;
             else
-                return false;
+            {
+                FindElementInSeconds(waitSecs);
+                if (_webElement.Displayed)
+                    return true;
+                else
+                    return false;
+            }
+            
            
         }
     }

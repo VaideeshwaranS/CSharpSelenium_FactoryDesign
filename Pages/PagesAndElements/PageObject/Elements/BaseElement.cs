@@ -19,6 +19,7 @@ namespace PageObject.Elements
         #endregion
         public Hyperlink Equipment => Element.CreateElementByID<Hyperlink>("nav-link-Admin.Equipment");
         public Hyperlink Facilities => Element.CreateElementByID<Hyperlink>("nav-link-Admin.Facilities");
-
+        public Button InnerTab(string tabName) => Element.CreateElementByXpath<Button>($"//tabset//li[contains(@class,'nav-item')]//span/span[normalize-space()='{tabName}']");
+        public TextField KendoLoading => Element.CreateElementByXpath<TextField>("//div[@class='circle-loader-text'][normalize-space(text()='Loading')]");
     }
 }
