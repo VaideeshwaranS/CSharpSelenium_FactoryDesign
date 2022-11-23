@@ -4,10 +4,12 @@ namespace Elements
 {
     public class Checkbox : WebElement
     {
-        public Checkbox(WebDriver driver, By by) : base(driver, by)
+        public Checkbox(IWebDriver driver, By by) : base(driver, by)
         {
         }
-
+        public Checkbox(IWebDriver driver, IWebElement element, By by) : base(driver, element, by)
+        {
+        }
         public void SelectCheckBox(bool select = true)
         {
             if ( (select && !isSelected()) || (!select && isSelected()))

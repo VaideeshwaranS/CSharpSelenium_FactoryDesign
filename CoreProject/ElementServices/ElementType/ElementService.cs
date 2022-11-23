@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
-
+using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace Elements
 {
@@ -15,7 +16,8 @@ namespace Elements
         }
         public T CreateElement<T>(By by)
         {
-           return (T)Activator.CreateInstance(typeof(T), driver, by);
+            var ele = (T)Activator.CreateInstance(typeof(T), new object[] { driver, by });
+            return ele;
         }
 
         public T CreateElementByXpath<T>(string id)
@@ -29,6 +31,27 @@ namespace Elements
             return CreateElement<T>(by);
         }
 
+        public List<T> CreateAllElementByXpath<T>(string id)
+        {
+            By by = By.XPath(id);
+            var result = driver.FindElements(by);
+            var resultElements = new List<T>();
+            foreach (var element in result)
+            {
+                try
+                {
+                    var ele = (T)Activator.CreateInstance(typeof(T),new object[] { driver, element, by });
+                    resultElements.Add(ele);
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+               
+            }
+            
+            return resultElements;
+        }
 
     }
 }

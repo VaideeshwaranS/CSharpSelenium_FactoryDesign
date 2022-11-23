@@ -14,7 +14,11 @@ namespace PageObject.Pages
     {
         IWebDriver driver;
         public IReportService report;
-        string URL = "https://repairstack-uat.3m.com/";
+        protected string URL = "https://repairstack-uat.3m.com/";
+        protected string ENV = "UAT";
+        protected string userName = "adminuat";
+        protected string password = "Test@1234567";
+
         public Page()
         {
             driver = ServiceRegister.Browser.GetWebDriver();
@@ -55,10 +59,10 @@ namespace PageObject.Pages
                                 "DOM Loading time is <mark>{1}</mark> ms</br>" +
                                 "Total Response Time is <mark>{2}</mark> ms</br>" +
                                 "<b>Total Time Taken is <mark>{3}</mark> ms</b>", testName, perf.DomLoaded,perf.TotalResponseTime,perf.TotalTimeTaken ));
-            DBHelper db = new DBHelper();
+            DBHelper db = new DBHelper(ENV);
             db.WriteDatatoTable(testName, perf);
             var message = "<b> Performance Metrics for last 5 runs: </b><br>"+db.GetTableMarkupforLast5Runs(testName).GetMarkup();
-            report.LogReport(Status.Pass, message );
+            report.PerfLogTest(Status.Info, message );
             
         }
 
@@ -67,6 +71,13 @@ namespace PageObject.Pages
             report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} to complete");
             page.LoadingIcon.isDisplayed(false);
         }
+
+        #region Toast Message
+        public string GetToastMessage(int secs = 60)
+        {
+            return page.ToastMessage.GetText(secs);
+        }
+        #endregion
 
         #region Navigations
         public EquipmentPage NavigateToEquipment()
@@ -86,7 +97,7 @@ namespace PageObject.Pages
             WaitForLoadingIcon();
             return new FacilitiesPage();
         }
-
+        
         #endregion
     }
 }

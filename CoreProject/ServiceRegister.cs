@@ -4,12 +4,14 @@ using CoreServices.ReportService;
 using Elements;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Data;
+using System.Text;
 
 namespace CoreServices
 {
     public static class ServiceRegister
     {
-       public enum BrowserTypes
+        public enum BrowserTypes
         {
             Chrome,
             Firefox
@@ -49,12 +51,12 @@ namespace CoreServices
                 browserWait = value;
             }
         }
-       
+
         public static IReportService ReportService
         {
             get
             {
-                if(reportService == null)
+                if (reportService == null)
                 {
                     throw new NullReferenceException("Extent Report is not initialized");
                 }
@@ -66,6 +68,8 @@ namespace CoreServices
             }
         }
 
+        public static DataTable perfConsolidated = new DataTable();
+        public static int tcCounter = 0;
         public static PerformanceMetrics Performance => browser.GetPerformanceMetricsAsync().Result;
 
         public static PerformanceMetrics PerformanceTiming => browser.GetPerformanceTiming();

@@ -9,6 +9,10 @@ using DevToolsSessionDomain = OpenQA.Selenium.DevTools.V104.DevToolsSessionDomai
 using Network = OpenQA.Selenium.DevTools.V104.Network;
 using CoreServices.Performance;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using OpenQA.Selenium.Chromium;
+using System.Text;
 
 namespace CoreServices.DriverManager
 {
@@ -29,17 +33,19 @@ namespace CoreServices.DriverManager
         private IWebDriver driver;
         private IDevTools devTools;
         private DevToolsSession session;
-        public DriverService(string browser)
-        {
-            var service = ChromeDriverService.CreateDefaultService();
-            Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory + "chromedriver.log");
-            service.LogPath = AppDomain.CurrentDomain.BaseDirectory + "chromedriver.log";
-            service.EnableVerboseLogging = true;
+        string testName;
+        private string path = Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().IndexOf("bin") - 1);
+        public DriverService(string browser, string testName)
+        {  
+            this.testName = testName;
             var options = new ChromeOptions();
-
+            //var perfLogs = new ChromiumPerformanceLoggingPreferences();
+            //perfLogs.AddTracingCategories(new string[] { "toplevel,disabled-by-default-devtools.timeline.frame,blink.console,disabled-by-default-devtools.timeline,benchmark" });
+            //options.PerformanceLoggingPreferences = perfLogs;
+            options.SetLoggingPreference("performance", LogLevel.All);
             driver = browser switch
             {
-                "chrome" => new ChromeDriver(service, options),
+                "chrome" => new ChromeDriver(options),
                 _ => throw new Exception("Invalid Browser name")
             };
             driver.Manage().Window.Maximize();
@@ -117,8 +123,21 @@ namespace CoreServices.DriverManager
             devTools.CloseDevToolsSession();
         }
 
+        private void GetPerfLogForTest()
+        {
+            var logText = driver.Manage().Logs.GetLog("performance");
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"------------------{testName}-------------------");
+            foreach (var entry in logText)
+            {
+                sb.AppendLine(entry.Timestamp + " : " + entry.Message);
+            }
+            File.WriteAllText(path + $"\\Reports\\{testName}.log", sb.ToString());
+        }
+
         public PerformanceMetrics GetPerformanceTiming()
         {
+            //GetPerfLogForTest();
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             PerformanceMetrics perfmetrics = new PerformanceMetrics();
             perfmetrics.DomLoaded = Convert.ToInt32(js.ExecuteScript("return window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart;"));

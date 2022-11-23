@@ -10,17 +10,16 @@ namespace Tests
     [TestClass]
     public class BaseUITest 
     {
-        public ExtentTest _test;
-        public ExtentReports _extent;
         public TestContext TestContext { get; set; }
         private IReportService report;
 
         [TestInitialize]
         public void TestInit()
         {
+           ServiceRegister.tcCounter++;
            report = ServiceRegister.ReportService;
-           ServiceRegister.Browser = new DriverService("chrome");
-           report.StartNewTest(TestContext.TestName);
+           ServiceRegister.Browser = new DriverService("chrome", TestContext.TestName);
+           report.CreateTestMethod(ServiceRegister.tcCounter+" "+TestContext.TestName);
         }
 
         [TestCleanup]

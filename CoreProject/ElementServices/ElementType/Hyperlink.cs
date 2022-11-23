@@ -5,10 +5,12 @@ namespace Elements
 {
     public class Hyperlink : WebElement
     {
-        private IWebDriver driver;
-        public Hyperlink(WebDriver driver, By by) : base(driver, by)
+        
+        public Hyperlink(IWebDriver driver, By by) : base(driver, by)
         {
-            this.driver = driver;
+        }
+        public Hyperlink(IWebDriver driver, IWebElement element, By by) : base(driver, element, by)
+        {
         }
         public void Click()
         {

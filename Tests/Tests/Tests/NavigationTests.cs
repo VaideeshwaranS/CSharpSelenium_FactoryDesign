@@ -3,13 +3,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
 using PageObject.Elements;
+using CoreServices;
 
 namespace Tests
 {
     [TestClass]
     public class NavigationTest : BaseUITest
     {
-
+        [ClassInitialize]
+        public static void initClass(TestContext testContext)
+        {
+            ServiceRegister.ReportService.StartNewTest(testContext.FullyQualifiedTestClassName);
+        }
         [TestMethod]
         public void LoginAsAdmin_Test()
         {

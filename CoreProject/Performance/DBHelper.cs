@@ -11,16 +11,19 @@ namespace CoreServices.Performance
     {
         string connString;
         SqlConnection conn;
-       public DBHelper()
+        string ENV = null;
+       public DBHelper(string eNV)
         {
             connString = @"Data Source=localhost\SQLEXPRESS01;Initial Catalog=PerformanceMetricsForAAD;Integrated Security=SSPI";
             conn = new SqlConnection(connString);
             conn.Open();
+            ENV = eNV;
         }
 
         public DBHelper WriteDatatoTable(string testname,PerformanceMetrics perf)
         {
             string testID;
+            DateTime dateNow = DateTime.Now;
             if (!checkTestCaseExists(testname))
             {
                 Guid myuuid = Guid.NewGuid();
@@ -30,9 +33,10 @@ namespace CoreServices.Performance
             }
             testID = GetTestCaseId(testname);
             string sql;
-            sql = $"INSERT INTO TestResponseTime (TestCaseID,Date,ResponseTime,DOMLoadTime,TotalTime) values('{testID}','{DateTime.Now}'," +
-                    $"{perf.TotalResponseTime},{perf.DomLoaded},{perf.TotalTimeTaken});";
+            sql = $"INSERT INTO TestResponseTime (TestCaseID,Date,ResponseTime,DOMLoadTime,TotalTime,Environment) values('{testID}','{dateNow}'," +
+                    $"{perf.TotalResponseTime},{perf.DomLoaded},{perf.TotalTimeTaken},'{ENV}');";
             WriteToTable(sql);
+            ServiceRegister.perfConsolidated.Rows.Add(testname, perf.DomLoaded.ToString(), perf.TotalResponseTime.ToString(), (perf.TotalTimeTaken/1000).ToString());
             return this;
         }
 
@@ -60,15 +64,15 @@ namespace CoreServices.Performance
         public string GetMetricsTableForLast5Date(string testName)
         {
             DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[2] { new DataColumn("Date", typeof(string)),
+            dt.Columns.AddRange(new DataColumn[3] { new DataColumn("Date", typeof(string)),new DataColumn("Environment", typeof(string)),
                     new DataColumn("Time Taken in (ms)", typeof(string)) });
-            string oString = $"SELECT TOP (5) [Date],[TotalTime] FROM TestResponseTime where TestCaseID = (SELECT TestCaseID from TestNameTable where [TestName] = '{testName}') ORDER BY Date desc ";
+            string oString = $"SELECT TOP (5) [Date],[Environment],[TotalTime] FROM TestResponseTime where TestCaseID = (SELECT TestCaseID from TestNameTable where [TestName] = '{testName}') ORDER BY Date desc ";
             SqlCommand oCmd = new SqlCommand(oString, conn);
             using (SqlDataReader oReader = oCmd.ExecuteReader())
             {
                 while (oReader.Read())
                 {
-                    dt.Rows.Add(oReader["Date"].ToString(), oReader["TotalTime"].ToString());                        
+                    dt.Rows.Add(oReader["Date"].ToString(), oReader["Environment"].ToString(), oReader["TotalTime"].ToString());                        
                 }
             }
 
@@ -97,25 +101,27 @@ namespace CoreServices.Performance
         public IMarkup GetTableMarkupforLast5Runs(string testName)
         {
             DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[2] { new DataColumn("Date", typeof(string)),
+            dt.Columns.AddRange(new DataColumn[3] { new DataColumn("Date", typeof(string)),new DataColumn("Environment", typeof(string)),
                     new DataColumn("TotalTime", typeof(string)) });
-            string oString = $"SELECT TOP (5) [Date],[TotalTime] FROM TestResponseTime where TestCaseID = (SELECT TestCaseID from TestNameTable where [TestName] = '{testName}') ORDER BY Date desc ";
+            string oString = $"SELECT TOP (5) [Date],[Environment],[TotalTime] FROM TestResponseTime where TestCaseID = (SELECT TestCaseID from TestNameTable where [TestName] = '{testName}') ORDER BY Date desc ";
             SqlCommand oCmd = new SqlCommand(oString, conn);
             using (SqlDataReader oReader = oCmd.ExecuteReader())
             {
                 while (oReader.Read())
                 {
-                    dt.Rows.Add(oReader["Date"].ToString(), oReader["TotalTime"].ToString());
+                    dt.Rows.Add(oReader["Date"].ToString(), oReader["Environment"].ToString(), oReader["TotalTime"].ToString());
                 }
             }
-            string[,] data = new string[dt.Rows.Count+1, 2];
+            string[,] data = new string[dt.Rows.Count+1, 3];
             data[0,0] = "Date";
-            data[0,1] = "Time Taken in (ms)";
+            data[0, 1] = "Environment";
+            data[0,2] = "Time Taken in (ms)";
             int i = 1;
             foreach(DataRow r in dt.Rows)
             {
                 data[i,0] = r["Date"].ToString();
-                data[i,1] = r["TotalTime"].ToString();
+                data[i, 1] = r["Environment"].ToString();
+                data[i,2] = r["TotalTime"].ToString();
                 i++;
             }
             var m = MarkupHelper.CreateTable(data);

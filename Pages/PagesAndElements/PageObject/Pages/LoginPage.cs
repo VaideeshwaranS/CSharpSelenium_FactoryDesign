@@ -32,9 +32,9 @@ namespace PageObject.Pages
         }
         public UsersPage LoginToApp()
         {
-            EnterUsername("adminuat");
+            EnterUsername(userName);
             PressContinue();
-            EnterPassword("Test@1234567");
+            EnterPassword(password);
             ClickLogin();
             return new UsersPage();
         }

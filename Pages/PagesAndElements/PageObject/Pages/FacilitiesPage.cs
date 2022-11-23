@@ -10,7 +10,7 @@ namespace PageObject.Pages
         public string GetPageTitle()
         {
             report.LogReport(Status.Info, $"Get Page Title");
-            return page.PageTitle.GetText();
+            return page.PageTitle.GetText(60);
         }
 
         public bool TabHeaderTextPresent(string header)

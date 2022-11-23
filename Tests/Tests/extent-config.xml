@@ -7,7 +7,7 @@
 
     <!-- enables timeline -->
     <!-- defaults to true -->
-    <enableTimeline>true</enableTimeline>
+    <enableTimeline>false</enableTimeline>
 
     <!-- document encoding -->
     <!-- defaults to UTF-8 -->
