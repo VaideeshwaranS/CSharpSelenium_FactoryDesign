@@ -12,6 +12,7 @@ namespace Tests
     {
         public TestContext TestContext { get; set; }
         private IReportService report;
+        public string BodyShopName = "Congruent SSO 1";
 
         [TestInitialize]
         public void TestInit()

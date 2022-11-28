@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title></title>
+  <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@3da944e596e81f10ac6c1042c792af8a5a741023/commons/img/logo.png">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@3da944e596e81f10ac6c1042c792af8a5a741023/commons/img/logo.png">
+  <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@8539670db814bf19a0ddbe9a6d19058aea0cf981/spark/css/spark-style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style> </style>
+</head>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="spa  dark">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+            <div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary"></span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">11/24/2022 2:54:13 PM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+            <div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown" onclick="toggleView('test-view')">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="side-nav-controls">
+    <ul>
+      <li>
+        <a href="#" class="lightsout" style="color:#8a8a8a;">
+          <i class="fa fa-desktop"></i>"</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row test-view">
+    <div class="test-list">
+        <div class="test-list-tools">
+            <ul class="tools pull-left">
+                <li>
+                    <a href="">
+                        <span class="font-size-14">Tests</span>
+                    </a>
+                </li> 
+            </ul>
+            <ul class="tools text-right">
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-exclamation-circle"></i>
+					</a>
+					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>																																				<div class="dropdown-divider"></div>
+						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+					</ul>
+				</li>
+								            </ul>
+        </div>
+        <div class="test-list-wrapper scrollable">
+            <ul class="test-list-item">
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="1"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">AAD - Consolidated Performance Report</p> 
+								<p class="duration text-sm">0h:9m:14s+631ms</p> 
+								<span class="datetime">14:54:13 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">AAD - Consolidated Performance Report</h5>
+										<span class='badge badge-success'>11/24/2022 2:54:13 PM</span>
+										<span class='badge badge-danger'>11/24/2022 3:03:28 PM</span>
+										<span class='badge badge-default'>0h:9m:14s+631ms</span>
+									</div>
+																	</div>
+							</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:28</td>
+				<td>
+<b>Performance Report Consolidated : <br><table class='runtime-table table-striped table'><tr><td>Test Name</td><td>DOM Loading Time (ms)</td><td>Response Time (ms)</td><td>Total Time Taken (Secs)</td></tr><tr><td>EquipmentPageLoad_Test</td><td>4955</td><td>14</td><td>5.528</td></tr><tr><td>EquipmentPage_Devices_GridLoad_Test</td><td>2290</td><td>11</td><td>2.791</td></tr><tr><td>EquipmentPage_StockLocations_GridLoad_Test</td><td>2992</td><td>3</td><td>3.631</td></tr><tr><td>FacilitiesPageLoad_Test</td><td>4140</td><td>5</td><td>4.647</td></tr><tr><td>Facilities_MSO_Load_Test</td><td>1564</td><td>4</td><td>2.096</td></tr><tr><td>Facilities_SSO_Load_Test</td><td>2833</td><td>5</td><td>3.355</td></tr><tr><td>LoginAsAdmin_Test</td><td>2762</td><td>5</td><td>3.282</td></tr><tr><td>ProductsGrid_loading_Test</td><td>2547</td><td>5</td><td>3.078</td></tr><tr><td>StockLocationsGrid_loading_Test</td><td>2846</td><td>6</td><td>3.408</td></tr><tr><td>Users_GridLoad_Test</td><td>1647</td><td>7</td><td>7.634</td></tr><tr><td>AllShops_View_loading_Test</td><td>2731</td><td>5</td><td>9.361</td></tr><tr><td>SelectShops_loading_Test</td><td>1798</td><td>6</td><td>2.368</td></tr><tr><td>CreateUser_Load_Test</td><td>3133</td><td>9</td><td>3.678</td></tr></table></b>									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+						</div>
+					</li>
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="2"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">Tests.AdminNavigationTest</p> 
+								<p class="duration text-sm">0h:7m:6s+413ms</p> 
+								<span class="datetime">14:54:13 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">Tests.AdminNavigationTest</h5>
+										<span class='badge badge-success'>11/24/2022 2:54:13 PM</span>
+										<span class='badge badge-danger'>11/24/2022 3:01:20 PM</span>
+										<span class='badge badge-default'>0h:7m:6s+413ms</span>
+									</div>
+																	</div>
+							</div>
+<div class="mt-4">
+	
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">1 EquipmentPageLoad_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:58</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 2:54:58 PM</td><td>PreProd</td><td>5528</td></tr><tr><td>11/24/2022 1:46:26 PM</td><td>UAT</td><td>3406</td></tr><tr><td>11/22/2022 12:37:22 PM</td><td>QA</td><td>3023</td></tr><tr><td>11/21/2022 10:54:49 PM</td><td>QA</td><td>2805</td></tr><tr><td>11/21/2022 10:13:23 PM</td><td>QA</td><td>3163</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:17</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:28</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:33</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:34</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:35</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:43</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:43</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:51</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:51</td>
+				<td>
+NavigateToEquipment Page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:51</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:54</td>
+				<td>
+TabHeaderTextPresent invoked. Checking Stock Locations									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:54:58</td>
+				<td>
+<b>Performance Metrics Collected:</b>  EquipmentPageLoad_Test <br>DOM Loading time is <mark>4955</mark> ms</br>Total Response Time is <mark>14</mark> ms</br><b>Total Time Taken is <mark>5528</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>14:54:58</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">2 EquipmentPage_Devices_GridLoad_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:38</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 2:55:38 PM</td><td>PreProd</td><td>2791</td></tr><tr><td>11/24/2022 1:47:08 PM</td><td>UAT</td><td>3277</td></tr><tr><td>11/21/2022 10:55:33 PM</td><td>QA</td><td>2288</td></tr><tr><td>11/21/2022 10:49:46 PM</td><td>QA</td><td>3247</td></tr><tr><td>11/21/2022 10:41:00 PM</td><td>QA</td><td>2867</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:01</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:14</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:16</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:17</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:18</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:22</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:22</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:29</td>
+				<td>
+NavigateToEquipment Page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:29</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:32</td>
+				<td>
+TabHeaderTextPresent invoked. Checking Stock Locations									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:36</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:36</td>
+				<td>
+ClickDevicesTab invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:36</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:38</td>
+				<td>
+TabHeaderTextPresent invoked. Checking Devices									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:38</td>
+				<td>
+Wait For Grid Tabel to Load									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:38</td>
+				<td>
+<b>Performance Metrics Collected:</b>  EquipmentPage_Devices_GridLoad_Test <br>DOM Loading time is <mark>2290</mark> ms</br>Total Response Time is <mark>11</mark> ms</br><b>Total Time Taken is <mark>2791</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>14:55:38</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">3 EquipmentPage_StockLocations_GridLoad_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:19</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 2:56:19 PM</td><td>PreProd</td><td>3631</td></tr><tr><td>11/24/2022 1:47:56 PM</td><td>UAT</td><td>5893</td></tr><tr><td>11/21/2022 10:56:19 PM</td><td>QA</td><td>3429</td></tr><tr><td>11/21/2022 10:15:03 PM</td><td>QA</td><td>3860</td></tr><tr><td>11/21/2022 9:51:32 PM</td><td>QA</td><td>3302</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:41</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:45</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:57</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:57</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:55:58</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:04</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:04</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:11</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:11</td>
+				<td>
+NavigateToEquipment Page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:11</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:15</td>
+				<td>
+TabHeaderTextPresent invoked. Checking Stock Locations									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:18</td>
+				<td>
+Wait For Grid Tabel to Load									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:19</td>
+				<td>
+<b>Performance Metrics Collected:</b>  EquipmentPage_StockLocations_GridLoad_Test <br>DOM Loading time is <mark>2992</mark> ms</br>Total Response Time is <mark>3</mark> ms</br><b>Total Time Taken is <mark>3631</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>14:56:24</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">4 FacilitiesPageLoad_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:06</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 2:57:06 PM</td><td>PreProd</td><td>4647</td></tr><tr><td>11/24/2022 1:48:36 PM</td><td>UAT</td><td>3399</td></tr><tr><td>11/22/2022 11:55:15 AM</td><td>QA</td><td>3494</td></tr><tr><td>11/21/2022 10:57:05 PM</td><td>QA</td><td>3295</td></tr><tr><td>11/21/2022 10:15:46 PM</td><td>QA</td><td>3856</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:26</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:41</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:43</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:43</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:44</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:52</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:52</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:59</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:59</td>
+				<td>
+NavigateToFacilities Page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:56:59</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:03</td>
+				<td>
+Get Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:06</td>
+				<td>
+<b>Performance Metrics Collected:</b>  FacilitiesPageLoad_Test <br>DOM Loading time is <mark>4140</mark> ms</br>Total Response Time is <mark>5</mark> ms</br><b>Total Time Taken is <mark>4647</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>14:57:10</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">5 Facilities_MSO_Load_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:50</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 2:57:49 PM</td><td>PreProd</td><td>2096</td></tr><tr><td>11/24/2022 1:49:16 PM</td><td>UAT</td><td>1636</td></tr><tr><td>11/21/2022 10:57:52 PM</td><td>QA</td><td>3298</td></tr><tr><td>11/21/2022 10:16:38 PM</td><td>QA</td><td>2839</td></tr><tr><td>11/21/2022 9:53:02 PM</td><td>QA</td><td>2383</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:12</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:24</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:26</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:26</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:27</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:33</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:33</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:39</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:39</td>
+				<td>
+NavigateToFacilities Page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:39</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:44</td>
+				<td>
+Get Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:48</td>
+				<td>
+TabHeaderTextPresent invoked. Checking MSO									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:48</td>
+				<td>
+Wait For Grid Tabel to Load									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:49</td>
+				<td>
+<b>Performance Metrics Collected:</b>  Facilities_MSO_Load_Test <br>DOM Loading time is <mark>1564</mark> ms</br>Total Response Time is <mark>4</mark> ms</br><b>Total Time Taken is <mark>2096</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>14:57:50</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">6 Facilities_SSO_Load_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:29</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 2:58:29 PM</td><td>PreProd</td><td>3355</td></tr><tr><td>11/24/2022 1:50:01 PM</td><td>UAT</td><td>2851</td></tr><tr><td>11/21/2022 10:58:33 PM</td><td>QA</td><td>2601</td></tr><tr><td>11/21/2022 10:17:22 PM</td><td>QA</td><td>2563</td></tr><tr><td>11/21/2022 9:53:51 PM</td><td>QA</td><td>2262</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:57:52</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:07</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:09</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:09</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:10</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:15</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:15</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:21</td>
+				<td>
+NavigateToFacilities Page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:21</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:26</td>
+				<td>
+Get Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:29</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:29</td>
+				<td>
+Wait For Grid Tabel to Load									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:29</td>
+				<td>
+TabHeaderTextPresent invoked. Checking SSO									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:29</td>
+				<td>
+Wait For Grid Tabel to Load									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:29</td>
+				<td>
+<b>Performance Metrics Collected:</b>  Facilities_SSO_Load_Test <br>DOM Loading time is <mark>2833</mark> ms</br>Total Response Time is <mark>5</mark> ms</br><b>Total Time Taken is <mark>3355</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>14:58:33</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">7 LoginAsAdmin_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:04</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 2:59:04 PM</td><td>PreProd</td><td>3282</td></tr><tr><td>11/24/2022 1:50:34 PM</td><td>UAT</td><td>2648</td></tr><tr><td>11/22/2022 12:53:29 PM</td><td>QA</td><td>2718</td></tr><tr><td>11/22/2022 12:49:43 PM</td><td>QA</td><td>4391</td></tr><tr><td>11/21/2022 10:59:09 PM</td><td>QA</td><td>3288</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:35</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:48</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:48</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:50</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:50</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:51</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:57</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:58:57</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:04</td>
+				<td>
+<b>Performance Metrics Collected:</b>  LoginAsAdmin_Test <br>DOM Loading time is <mark>2762</mark> ms</br>Total Response Time is <mark>5</mark> ms</br><b>Total Time Taken is <mark>3282</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>14:59:04</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">8 ProductsGrid_loading_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:56</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 2:59:56 PM</td><td>PreProd</td><td>3078</td></tr><tr><td>11/24/2022 1:51:30 PM</td><td>UAT</td><td>4070</td></tr><tr><td>11/24/2022 1:22:48 PM</td><td>UAT</td><td>2051</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:06</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:20</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:22</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:22</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:23</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:29</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:29</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:35</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:41</td>
+				<td>
+OpenAllShopsDropdown is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:41</td>
+				<td>
+WaitForProgressLoadingIcon to finish									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:43</td>
+				<td>
+VerifyOptionDisplayed for All Shops View is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:43</td>
+				<td>
+enterShopsValue with Congruent SSO 1 is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:43</td>
+				<td>
+VerifyOptionDisplayed for Congruent SSO 1 is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:43</td>
+				<td>
+SelectDisplayedOption with Congruent SSO 1 is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:44</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:48</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:48</td>
+				<td>
+NavigateToProducts Page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:48</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:53</td>
+				<td>
+TabHeaderTextPresent invoked. Checking Stock									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:56</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:56</td>
+				<td>
+<b>Performance Metrics Collected:</b>  ProductsGrid_loading_Test <br>DOM Loading time is <mark>2547</mark> ms</br>Total Response Time is <mark>5</mark> ms</br><b>Total Time Taken is <mark>3078</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>14:59:57</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">9 StockLocationsGrid_loading_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:43</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 3:00:43 PM</td><td>PreProd</td><td>3408</td></tr><tr><td>11/24/2022 1:52:21 PM</td><td>UAT</td><td>2948</td></tr><tr><td>11/24/2022 1:22:01 PM</td><td>UAT</td><td>9538</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>14:59:59</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:13</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:15</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:16</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:16</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:24</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:24</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:30</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:34</td>
+				<td>
+OpenAllShopsDropdown is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:34</td>
+				<td>
+WaitForProgressLoadingIcon to finish									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:36</td>
+				<td>
+VerifyOptionDisplayed for All Shops View is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:36</td>
+				<td>
+enterShopsValue with Congruent SSO 1 is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:36</td>
+				<td>
+VerifyOptionDisplayed for Congruent SSO 1 is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:36</td>
+				<td>
+SelectDisplayedOption with Congruent SSO 1 is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:36</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:38</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:38</td>
+				<td>
+NavigateToStockLocations Page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:38</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:43</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:43</td>
+				<td>
+<b>Performance Metrics Collected:</b>  StockLocationsGrid_loading_Test <br>DOM Loading time is <mark>2846</mark> ms</br>Total Response Time is <mark>6</mark> ms</br><b>Total Time Taken is <mark>3408</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:00:43</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">10 Users_GridLoad_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:19</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 3:01:19 PM</td><td>PreProd</td><td>7634</td></tr><tr><td>11/24/2022 1:53:00 PM</td><td>UAT</td><td>2295</td></tr><tr><td>11/22/2022 12:44:13 PM</td><td>QA</td><td>4910</td></tr><tr><td>11/21/2022 10:59:51 PM</td><td>QA</td><td>3627</td></tr><tr><td>11/21/2022 10:18:44 PM</td><td>QA</td><td>2920</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:00:46</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:00</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:02</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:03</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:03</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:13</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:13</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:13</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:14</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:19</td>
+				<td>
+<b>Performance Metrics Collected:</b>  Users_GridLoad_Test <br>DOM Loading time is <mark>1647</mark> ms</br>Total Response Time is <mark>7</mark> ms</br><b>Total Time Taken is <mark>7634</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:01:20</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+	</div>
+
+</div>
+						</div>
+					</li>
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="23"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">Tests.AllShopsViewTest</p> 
+								<p class="duration text-sm">0h:1m:17s+821ms</p> 
+								<span class="datetime">15:01:20 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">Tests.AllShopsViewTest</h5>
+										<span class='badge badge-success'>11/24/2022 3:01:20 PM</span>
+										<span class='badge badge-danger'>11/24/2022 3:02:37 PM</span>
+										<span class='badge badge-default'>0h:1m:17s+821ms</span>
+									</div>
+																	</div>
+							</div>
+<div class="mt-4">
+	
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">11 AllShops_View_loading_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:57</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 3:01:57 PM</td><td>PreProd</td><td>9361</td></tr><tr><td>11/24/2022 1:53:46 PM</td><td>UAT</td><td>3506</td></tr><tr><td>11/24/2022 12:31:30 PM</td><td>UAT</td><td>5024</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:22</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:34</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:36</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:36</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:37</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:49</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:49</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:50</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:55</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:55</td>
+				<td>
+OpenAllShopsDropdown is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:55</td>
+				<td>
+WaitForProgressLoadingIcon to finish									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:57</td>
+				<td>
+VerifyOptionDisplayed for All Shops View is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:57</td>
+				<td>
+<b>Performance Metrics Collected:</b>  AllShops_View_loading_Test <br>DOM Loading time is <mark>2731</mark> ms</br>Total Response Time is <mark>5</mark> ms</br><b>Total Time Taken is <mark>9361</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:01:57</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">12 SelectShops_loading_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:37</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 3:02:37 PM</td><td>PreProd</td><td>2368</td></tr><tr><td>11/24/2022 1:54:29 PM</td><td>UAT</td><td>3580</td></tr><tr><td>11/24/2022 12:55:24 PM</td><td>UAT</td><td>3888</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:01:59</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:13</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:15</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:15</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:16</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:21</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:21</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:27</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:33</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:33</td>
+				<td>
+OpenAllShopsDropdown is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:33</td>
+				<td>
+WaitForProgressLoadingIcon to finish									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:34</td>
+				<td>
+VerifyOptionDisplayed for All Shops View is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:34</td>
+				<td>
+enterShopsValue with Congruent SSO 1 is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:35</td>
+				<td>
+VerifyOptionDisplayed for Congruent SSO 1 is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:35</td>
+				<td>
+SelectDisplayedOption with Congruent SSO 1 is invoked									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:35</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:37</td>
+				<td>
+<b>Performance Metrics Collected:</b>  SelectShops_loading_Test <br>DOM Loading time is <mark>1798</mark> ms</br>Total Response Time is <mark>6</mark> ms</br><b>Total Time Taken is <mark>2368</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:02:37</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+	</div>
+
+</div>
+						</div>
+					</li>
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="28"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">Tests.UserTest</p> 
+								<p class="duration text-sm">0h:0m:50s+383ms</p> 
+								<span class="datetime">15:02:37 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">Tests.UserTest</h5>
+										<span class='badge badge-success'>11/24/2022 3:02:37 PM</span>
+										<span class='badge badge-danger'>11/24/2022 3:03:28 PM</span>
+										<span class='badge badge-default'>0h:0m:50s+383ms</span>
+									</div>
+																	</div>
+							</div>
+<div class="mt-4">
+	
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">13 CreateUser_Load_Test</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:27</td>
+				<td>
+<b> Performance Metrics for last 5 runs: </b><br><table class='runtime-table table-striped table'><tr><td>Date</td><td>Environment</td><td>Time Taken in (ms)</td></tr><tr><td>11/24/2022 3:03:27 PM</td><td>PreProd</td><td>3678</td></tr><tr><td>11/24/2022 1:55:40 PM</td><td>UAT</td><td>2435</td></tr><tr><td>11/23/2022 3:48:30 PM</td><td>UAT</td><td>3333</td></tr><tr><td>11/22/2022 12:59:17 PM</td><td>QA</td><td>2994</td></tr><tr><td>11/22/2022 11:43:18 AM</td><td>QA</td><td>3139</td></tr></table>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Detailed Log</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:41</td>
+				<td>
+Launching the URLhttps://repairstack.3m.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:45</td>
+				<td>
+Enter the username testsuperuser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:57</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:58</td>
+				<td>
+Enter the password Test@1234567									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:02:59</td>
+				<td>
+Clicked on Login Button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:05</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:05</td>
+				<td>
+Get Users Page Title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:12</td>
+				<td>
+WaitForLoadingIcon to complete									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:18</td>
+				<td>
+Cleared Performance Timing in browser									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:18</td>
+				<td>
+ClickAddUsers invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:18</td>
+				<td>
+SelectRole with Single Repair Facility is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:18</td>
+				<td>
+SelectOrganization with Congruent SSO 1 is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:20</td>
+				<td>
+enterFirstName with Auto_First_12345 is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:20</td>
+				<td>
+enterLastName with Auto_Last_12345 is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:20</td>
+				<td>
+enterEmail with email@test.com is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:21</td>
+				<td>
+enterUserName with Auto_User_12345 is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:21</td>
+				<td>
+ClickContinueWithUserRole is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:21</td>
+				<td>
+ChooseUserRole with Technician is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:21</td>
+				<td>
+ClickContinueWithDefaultPermission is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:21</td>
+				<td>
+ClickConfirmAndAddUser is invoked.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>15:03:27</td>
+				<td>
+<b>Performance Metrics Collected:</b>  CreateUser_Load_Test <br>DOM Loading time is <mark>3133</mark> ms</br>Total Response Time is <mark>9</mark> ms</br><b>Total Time Taken is <mark>3678</mark> ms</b>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:03:28</td>
+				<td>
+Status:Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+			</div>
+	</div>
+
+</div>
+						</div>
+					</li>
+            </ul>    
+        </div>
+    </div>
+    <div class="test-content scrollable">
+        <div class="test-content-tools">
+            <ul>
+                <li>
+                    <a class="back-to-test" href="javascript:void(0)">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="test-content-detail">
+            <div class="detail-body"></div>
+        </div>
+    </div>
+</div>
+										<div class="container-fluid p-4 dashboard-view">
+	<div class="row">
+		<div class="col-sm-12 col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Tests</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='parent-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='100%'>
+	                    <b>4</b> tests passed
+                    </small></div>
+	                <div>
+	                    <small data-tooltip='0%'><b>0</b> tests failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Steps</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='child-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='100%'><b>13</b> steps passed</small></div>
+	                <div>
+	                    <small data-tooltip='0%'><b>0</b> steps failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+			</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Tests</h6>
+							<h2 class="font-size-28 font-weight-light">4</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+								<span>100%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Steps</h6>
+							<h2 class="font-size-28 font-weight-light">13</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+								<span>100%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Start</h6>
+							<h6 class="font-weight-light">11/24/2022 2:54:13 PM</h6>
+							<span class="text-semibold text-success font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-success opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Duration</h6>
+							<h6 class="font-weight-light">00:09:14.6546070</h6>
+							<span class="text-semibold text-danger font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-danger opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+								<div class="col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Environment</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td>Host Name</td>
+									<td>Automation POC for Performance Test</td>
+								</tr>
+								<tr>
+									<td>Environment</td>
+									<td>UAT - Test Environment</td>
+								</tr>
+								<tr>
+									<td>UserName</td>
+									<td>AAD Team</td>
+								</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var statusGroup = {
+    parentCount: 4,
+		passParent: 4,
+		failParent: 0,
+		fatalParent: 0,
+		errorParent: 0,
+		warningParent: 0,
+		skipParent: 0,
+		exceptionsParent: 0,
+		childCount: 13,
+		passChild: 13,
+		failChild: 0,
+		fatalChild: 0,
+		errorChild: 0,
+		warningChild: 0,
+		skipChild: 0,
+		infoChild: 0,
+		debugChild: 0,
+		exceptionsChild: 0,
+		grandChildCount: 0,
+		passGrandChild: 0,
+		failGrandChild: 0,
+		fatalGrandChild: 0,
+		errorGrandChild: 0,
+		warningGrandChild: 0,
+		skipGrandChild: 0,
+		infoGrandChild: 0,
+		debugGrandChild: 0,
+		exceptionsGrandChild: 0,
+	};
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@cc89904c1a12065be1d08fc4994a258ef01b12bd/spark/js/scripts.js"></script>
+<script type='text/javascript'>
+	
+</script>
+</body>
+
+</html>

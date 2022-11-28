@@ -76,12 +76,12 @@ namespace CoreServices.ReportService
             mail_summary += "<head><style>table, th, td { border: 1px solid black;}</style></head>";
             mail_summary += "<body><h2 align='center'><font color = 'blue'>3M - Repair Stack</h2></font><br>" +
                 "<h3 align='center'><font color = 'red'>Performance Report - Consolidated</h3></font><br>";
-            mail_summary += "<p><i>Please Find the Attached Report for details</i> </p><br><b>";
+            mail_summary += "<p><i>Please Find the Attached Report for PreProd Env,</i> </p><br><b>";
             mail_summary += m.GetMarkup();
             mail_summary += "</b></body></html>";
             _extent.Flush();
             
-            //SendEmail(mail_summary);
+            SendEmail(mail_summary);
         }
 
         private void SendEmail(string mailSummary)
@@ -99,7 +99,7 @@ namespace CoreServices.ReportService
             mail.From = new MailAddress("vaideeshwaran.s@congruentindia.com");
 
             mail.To.Add("vaideeshwaran.s@congruentindia.com");
-           // mail.To.Add("logesh.r@congruentindia.com");
+           //mail.To.Add("logesh.r@congruentindia.com");
             //mail.CC.Add("santhoshkumar.r@congruentindia.com");
             mail.Subject = "AAD Performance Report";
             mail.Body = mailSummary;

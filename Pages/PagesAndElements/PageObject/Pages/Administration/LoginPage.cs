@@ -1,11 +1,12 @@
 ﻿using AventStack.ExtentReports;
-using PageObject.Elements;
+using PageObject.Pages;
+using PagesAndElements.PageObject.Elements.Administration;
 
-namespace PageObject.Pages
+namespace PagesAndElements.PageObject.Pages.Administration
 {
     public class LoginPage : Page<Login>
     {
-      
+
         public void EnterUsername(string username)
         {
             report.LogReport(Status.Info, $"Enter the username {username} ");
@@ -25,9 +26,9 @@ namespace PageObject.Pages
         {
             report.LogReport(Status.Info, $"Clicked on Login Button ");
             page.Next.Click();
-            
+
             WaitForLoadingIcon();
-            
+
 
         }
         public UsersPage LoginToApp()

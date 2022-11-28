@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PageObject.Elements
+namespace PagesAndElements.PageObject.Elements.Administration
 {
-    public class Equipment : BaseElement
+    public class Products : BaseElement
     {
-    
+
     }
 }

@@ -4,10 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PageObject.Elements
+namespace PagesAndElements.PageObject.Elements.Administration
 {
     public class Facilities : BaseElement
     {
-        public TextField PageTitle => Element.CreateElementByXpath<TextField>("//span[@class='page-header']/span");
     }
 }

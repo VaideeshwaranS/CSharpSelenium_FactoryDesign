@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreServices", "CoreProject\CoreServices.csproj", "{B591420C-DAAD-48E2-ADE8-D4CDE5A0D0F9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "POC_Tests", "POC_Tests", "{31290D00-C319-439F-A292-A3961BD21034}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RepairStack-AAD", "RepairStack-AAD", "{31290D00-C319-439F-A292-A3961BD21034}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests\Tests.csproj", "{DA9CBFC5-E3A3-4097-81F9-49C4B958CBAE}"
 EndProject

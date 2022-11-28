@@ -1,14 +1,14 @@
 ﻿using AventStack.ExtentReports;
-using PageObject.Elements;
 using PageObject.Pages;
 using PageObject.Resources;
+using PagesAndElements.PageObject.Elements.Administration;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 using System.Text;
 
-namespace PageObject.Pages
+namespace PagesAndElements.PageObject.Pages.Administration
 {
     public class UsersPage : Page<Users>
     {
@@ -84,7 +84,7 @@ namespace PageObject.Pages
         private void ClickContinueWithUserRole()
         {
             report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} is invoked.");
-            page.ContinueWithUserRole.Click();
+            page.ContinueWithUserRole.Click(120);
         }
         private void ChooseUserRole(string text)
         {

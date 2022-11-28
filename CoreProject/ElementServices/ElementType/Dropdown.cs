@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using static Elements.WebElementExtension;
 
 
 namespace Elements
@@ -20,8 +21,21 @@ namespace Elements
         public void SelectValuesByInput(string text)
         {
             _webElement.Click();
-            FindChildElementByXpath<InputField>("//input").SendKeysWithClear(text);
+            SendValues(text);
             FindChildElementByXpath<Button>($"/ng-dropdown-panel//span[contains(.,'{text}')]").Click();
+        }
+        public string GetValuesFromDropdownInput()
+        {
+            return FindChildElementByXpath<InputField>("//input").GetAttribute("value");
+        }
+
+        public void SendValues(string text)
+        {
+            FindChildElementByXpath<InputField>("//input").SendKeysWithClear(text);
+        }
+        public void Click()
+        {
+            FindChildElementByXpath<Button>("//button").Click();
         }
     }
 }

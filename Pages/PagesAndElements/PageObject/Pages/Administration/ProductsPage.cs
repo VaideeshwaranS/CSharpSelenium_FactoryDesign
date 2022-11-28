@@ -1,15 +1,12 @@
 ﻿using AventStack.ExtentReports;
-using PageObject.Elements;
 using PageObject.Pages;
-
+using PagesAndElements.PageObject.Elements.Administration;
 using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
-namespace PageObject.Pages
+namespace PagesAndElements.PageObject.Pages.Administration
 {
-    public class EquipmentPage : Page<Equipment>
+    public class ProductsPage : Page<Products>
     {
         public bool TabHeaderTextPresent(string header)
         {
@@ -23,11 +20,6 @@ namespace PageObject.Pages
             return page.KendoLoading.isDisplayed(false);
         }
 
-        public void ClickDevicesTab()
-        {
-            report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} invoked.");
-            page.InnerTab("Devices").Click();
-            WaitForLoadingIcon();
-        }
+       
     }
 }

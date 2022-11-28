@@ -1,10 +1,10 @@
-﻿using PageObject.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
 using PageObject.Elements;
 using CoreServices;
 using PageObject.Resources;
+using PagesAndElements.PageObject.Pages.Administration;
 
 namespace Tests
 {
@@ -28,7 +28,7 @@ namespace Tests
             var userDtails = new AddUserEntity()
             {
                 RoleType = "Single Repair Facility",
-                Organization = "CongruentSSO",
+                Organization = BodyShopName,
                 FirstName = "Auto_First_12345",
                 LastName = "Auto_Last_12345",
                 Email = "email@test.com",
@@ -43,7 +43,7 @@ namespace Tests
             app.GetPerformanceTiming(TestContext.TestName);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void SearchUser_Load_Test()
         {
             LoginPage app = new LoginPage();
@@ -55,7 +55,7 @@ namespace Tests
             usersPage.enterSearchText("Auto_User_12345");
             usersPage.WaitForLoadingIcon();
             usersPage.usersGridKendo();
-        }
+        }*/
 
     }
 }

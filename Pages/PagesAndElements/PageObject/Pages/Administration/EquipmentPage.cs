@@ -1,18 +1,15 @@
 ﻿using AventStack.ExtentReports;
-using PageObject.Elements;
+using PageObject.Pages;
+using PagesAndElements.PageObject.Elements.Administration;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
+using System.Text;
 
-namespace PageObject.Pages
+namespace PagesAndElements.PageObject.Pages.Administration
 {
-    public class FacilitiesPage : Page<Facilities>
+    public class EquipmentPage : Page<Equipment>
     {
-        public string GetPageTitle()
-        {
-            report.LogReport(Status.Info, $"Get Page Title");
-            return page.PageTitle.GetText(60);
-        }
-
         public bool TabHeaderTextPresent(string header)
         {
             report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} invoked. Checking {header}");
@@ -25,10 +22,11 @@ namespace PageObject.Pages
             return page.KendoLoading.isDisplayed(false);
         }
 
-        public void ClickSSOTab()
+        public void ClickDevicesTab()
         {
-            report.LogReport(Status.Info, $"Wait For Grid Tabel to Load");
-            page.InnerTab("SSO").Click();
+            report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} invoked.");
+            page.InnerTab("Devices").Click();
+            WaitForLoadingIcon();
         }
     }
 }

@@ -1,25 +1,30 @@
-﻿using OpenQA.Selenium;
-
+﻿using CoreServices;
+using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using static Elements.WebElementExtension;
 
 namespace Elements
 {
-   public abstract class WebElement : WebElementExtension
+   public abstract class WebElement 
     {
         protected IWebDriver driver;
-        private By by;
-        public WebElement(IWebDriver driver, By by) : base(driver, by)
+        protected By by;
+        public WebElement(IWebDriver driver, By by) 
         {
             this.driver = driver;
             this.by = by;
         }
 
-        public WebElement(IWebDriver driver, IWebElement element, By by) : this(driver, by)
+        public WebElement(IWebDriver driver, IWebElement element, By by) 
         {
-           _webElement = element;
+            this.driver = driver;
+            this.by = by;
+            _webElement = element;
         }
         public IWebElement _webElement
         {
-            get => FindElementInSeconds();
+            get => driver.FindElementInSeconds(by);
 
             set => _webElement = value;
         }
@@ -32,7 +37,7 @@ namespace Elements
             {
                 try
                 {
-                    return WaitForElementToDisappear(waitSecs);
+                    return WaitForElementToDisappear(by,waitSecs);
                 }
                 catch
                 {
@@ -42,7 +47,7 @@ namespace Elements
             }
             else
             {
-                FindElementInSeconds(waitSecs);
+                driver.FindElementInSeconds(by,waitSecs);
                 if (_webElement.Displayed)
                     return true;
                 else
@@ -50,10 +55,41 @@ namespace Elements
             }
 
         }
-
-        /*protected T FindChildElementByXpath<T>(string childLocator) where T: WebElement
+        public void Click(int maxSec = 60)
         {
-            return 
-        }*/
+            WaitForElementClickable(by, maxSec);
+            try
+            {
+                if (Enabled)
+                    _webElement.Click();
+            }
+            catch (Exception e)
+            {
+                JSClick();//to be 
+            }
+        }
+
+        public string GetAttribute(string name)
+        {
+            return _webElement.GetAttribute(name).ToString();
+        }
+        public void JSClick()
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", _webElement);
+        }
+        public T FindChildElementByXpath<T>(string id) where T : WebElement
+        {
+            ElementService element = new ElementService(ServiceRegister.Browser.GetWebDriver());
+            return element.CreateElementByXpath<T>(by.Criteria + id);
+
+        }
+
+        public List<T> FindAllChildElementByXpath<T>(string id) where T : WebElement
+        {
+            ElementService element = new ElementService(ServiceRegister.Browser.GetWebDriver());
+            return element.CreateAllElementByXpath<T>(by.Criteria + id);
+
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Elements;
+using PageObject.Elements;
 
-namespace PageObject.Elements
+namespace PagesAndElements.PageObject.Elements.Administration
 {
     public class Login : BaseElement
     {

@@ -1,5 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using OpenQA.Selenium;
+using static Elements.WebElementExtension;
 using System;
 
 namespace Elements
@@ -16,7 +17,7 @@ namespace Elements
         {
             try
             {
-                return WaitForElementToBePresent(maxSec).Text.Trim();
+                return WaitForElementToBePresent(by,maxSec).Text.Trim();
             }
             catch(Exception e)
             {

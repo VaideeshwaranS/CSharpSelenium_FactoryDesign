@@ -1,15 +1,18 @@
-﻿using PageObject.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
 using PageObject.Elements;
 using CoreServices;
+using PagesAndElements.PageObject.Pages;
+using PagesAndElements.PageObject.Pages.Administration;
 
 namespace Tests
 {
     [TestClass]
-    public class NavigationTest : BaseUITest
+    public class AdminNavigationTest : BaseUITest
     {
+              
+
         [ClassInitialize]
         public static void initClass(TestContext testContext)
         {
@@ -51,7 +54,7 @@ namespace Tests
             Assert.IsTrue(usersPage.GetPageTitle().Contains("Users"));
 
             app.ClearTiming();
-            var equipment = app.NavigateToEquipment();
+            var equipment = app.navigate.NavigateToEquipment();
             Assert.IsTrue(equipment.TabHeaderTextPresent("Stock Locations"));
             app.GetPerformanceTiming(TestContext.TestName);
         }
@@ -65,7 +68,7 @@ namespace Tests
             Assert.IsTrue(usersPage.GetPageTitle().Contains("Users"));
 
             app.ClearTiming();
-            var equipment = app.NavigateToEquipment();
+            var equipment = app.navigate.NavigateToEquipment();
             Assert.IsTrue(equipment.TabHeaderTextPresent("Stock Locations"));
             Assert.IsTrue(equipment.GridTableLoaded());
             app.GetPerformanceTiming(TestContext.TestName);
@@ -78,7 +81,7 @@ namespace Tests
             app.launchApp();
             var usersPage = app.LoginToApp();
             Assert.IsTrue(usersPage.GetPageTitle().Contains("Users"));
-            var equipment = app.NavigateToEquipment();
+            var equipment = app.navigate.NavigateToEquipment();
             Assert.IsTrue(equipment.TabHeaderTextPresent("Stock Locations"));
             app.ClearTiming();
             equipment.ClickDevicesTab();
@@ -96,7 +99,7 @@ namespace Tests
             Assert.IsTrue(usersPage.GetPageTitle().Contains("Users"));
 
             app.ClearTiming();
-            var facilities = app.NavigateToFacilities();
+            var facilities = app.navigate.NavigateToFacilities();
             Assert.IsTrue(facilities.GetPageTitle().Contains("Facilities"));
             app.GetPerformanceTiming(TestContext.TestName);
 
@@ -111,7 +114,7 @@ namespace Tests
             Assert.IsTrue(usersPage.GetPageTitle().Contains("Users"));
 
             app.ClearTiming();
-            var facilities = app.NavigateToFacilities();
+            var facilities = app.navigate.NavigateToFacilities();
             Assert.IsTrue(facilities.GetPageTitle().Contains("Facilities"));
             Assert.IsTrue(facilities.TabHeaderTextPresent("MSO"));
             Assert.IsTrue(facilities.GridTableLoaded());
@@ -126,7 +129,7 @@ namespace Tests
             app.launchApp();
             var usersPage = app.LoginToApp();
             Assert.IsTrue(usersPage.GetPageTitle().Contains("Users"));
-            var facilities = app.NavigateToFacilities();
+            var facilities = app.navigate.NavigateToFacilities();
             Assert.IsTrue(facilities.GetPageTitle().Contains("Facilities"));
 
             app.ClearTiming();
@@ -135,6 +138,49 @@ namespace Tests
             Assert.IsTrue(facilities.GridTableLoaded());
             app.GetPerformanceTiming(TestContext.TestName);
 
+        }
+
+        [TestMethod]
+        public void ProductsGrid_loading_Test()
+        {
+            LoginPage app = new LoginPage();
+            app.launchApp();
+            var usersPage = app.LoginToApp();
+            Assert.IsTrue(usersPage.GetPageTitle().Contains("Users"));
+            usersPage.WaitForLoadingIcon();
+            NavigationPage navigate = new NavigationPage();
+            navigate.OpenAllShopsDropdown();
+            navigate.WaitForProgressLoadingIcon();
+            Assert.IsTrue(navigate.VerifyOptionDisplayed("All Shops View",120),"All Shops View not displayed after 120 secs");
+            navigate.SelectShop(BodyShopName);
+            navigate.WaitForLoadingIcon();
+
+            navigate.ClearTiming();
+            var products = app.navigate.NavigateToProducts();
+            Assert.IsTrue(products.TabHeaderTextPresent("Stock"));
+            products.WaitForLoadingIcon();
+            navigate.GetPerformanceTiming(TestContext.TestName);
+        }
+
+        [TestMethod]
+        public void StockLocationsGrid_loading_Test()
+        {
+            LoginPage app = new LoginPage();
+            app.launchApp();
+            var usersPage = app.LoginToApp();
+            Assert.IsTrue(usersPage.GetPageTitle().Contains("Users"));
+            usersPage.WaitForLoadingIcon();
+            NavigationPage navigate = new NavigationPage();
+            navigate.OpenAllShopsDropdown();
+            navigate.WaitForProgressLoadingIcon();
+            Assert.IsTrue(navigate.VerifyOptionDisplayed("All Shops View",120), "All Shops View not displayed after 120 secs");
+            navigate.SelectShop(BodyShopName);
+            navigate.WaitForLoadingIcon();
+
+            navigate.ClearTiming();
+            var stockLoc = app.navigate.NavigateToStockLocations();
+            stockLoc.WaitForLoadingIcon();
+            navigate.GetPerformanceTiming(TestContext.TestName);
         }
     }
 }

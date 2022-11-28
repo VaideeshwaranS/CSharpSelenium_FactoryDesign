@@ -7,6 +7,7 @@ using System;
 using System.Threading.Tasks;
 using CoreServices.Performance;
 using System.Reflection;
+using PagesAndElements.PageObject.Pages;
 
 namespace PageObject.Pages
 {
@@ -14,9 +15,9 @@ namespace PageObject.Pages
     {
         IWebDriver driver;
         public IReportService report;
-        protected string URL = "https://repairstack-uat.3m.com/";
-        protected string ENV = "UAT";
-        protected string userName = "adminuat";
+        protected string URL = "https://repairstack.3m.com/";
+        protected string ENV = "PreProd";
+        protected string userName = "testsuperuser";
         protected string password = "Test@1234567";
 
         public Page()
@@ -25,8 +26,8 @@ namespace PageObject.Pages
             report = ServiceRegister.ReportService;
         }
         protected M page => new M();
-        
-        
+
+        public NavigationPage navigate => new NavigationPage();
         public void launchApp()
         {
             report.LogReport(Status.Info, $"Launching the URL{URL}");
@@ -72,6 +73,12 @@ namespace PageObject.Pages
             page.LoadingIcon.isDisplayed(false);
         }
 
+        public void WaitForProgressLoadingIcon(int maxSecs = 60)
+        {
+            report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} to finish");
+            page.MatLoader.isDisplayed(false,maxSecs);
+        }
+
         #region Toast Message
         public string GetToastMessage(int secs = 60)
         {
@@ -79,25 +86,6 @@ namespace PageObject.Pages
         }
         #endregion
 
-        #region Navigations
-        public EquipmentPage NavigateToEquipment()
-        {
-            report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} Page");
-            page.Equipment.Click();
-            
-            WaitForLoadingIcon();
-            return new EquipmentPage();
-        }
-
-        public FacilitiesPage NavigateToFacilities()
-        {
-            report.LogReport(Status.Info, $"{MethodBase.GetCurrentMethod().Name} Page");
-            page.Facilities.Click();
-            
-            WaitForLoadingIcon();
-            return new FacilitiesPage();
-        }
         
-        #endregion
     }
 }
